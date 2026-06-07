@@ -72,7 +72,7 @@ https://github.com//IsholaAtotimati/LiquidityOrchestrator
 
 Watch the full protocol walkthrough:
 
-🎥 `https://youtube.com/watch?v=YOUR_VIDEO_ID`
+🎥 ```https://youtu.be/oryLLSvoM1Q```
 
 ---
 

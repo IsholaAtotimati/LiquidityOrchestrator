@@ -26,7 +26,7 @@ By combining Uniswap v4 Hooks, Chainlink Automation, Aave, ERC4626 vaults, and m
 
 | Contract                  | Address                          |
 | ------------------------- | ---------------------------------|
-| LiquidityOrchestrate Hook | `                                |           0x8b266637885e1adB318bdA4dF9c0aF2c9543C658`                    |                 |                                                              |
+| LiquidityOrchestrate Hook | `0x8b266637885e1adB318bdA4dF9c0aF2c9543C658`                                                                  |
 |                            |                                 |
 |  Create2Deployer Factory                                     |
 |         | ``0x1E2c6B0C18Aaa2c09F2aBEC25a518cB7c296a22d`      |

@@ -336,10 +336,11 @@ liquidityOrchestrate/
 │   └── abi/
 │
 ├── docs/
-│   ├── images/
-│   └── architecture.md
+│   README.md
+│   └── ENV.md
+    |_____DEPLOYMENT_VERIFICATION.md
 │
-└── README.md
+
 ```
 
 ---

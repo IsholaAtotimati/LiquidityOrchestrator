@@ -20,16 +20,19 @@ By combining Uniswap v4 Hooks, Chainlink Automation, Aave, ERC4626 vaults, and m
 ### Frontend
 
 🔗 **Dashboard:**
-`https://your-dashboard-url.com`
+`https://idle-liquidity-ui.netlify.app`
 
 ### Smart Contracts
 
-| Contract                  | Address                           |
-| ------------------------- | --------------------------------- |
-| LiquidityOrchestrate Hook | `0xYOUR_HOOK_ADDRESS`             |
-| Strategy Manager          | `0xYOUR_STRATEGY_MANAGER_ADDRESS` |
-| Aave Strategy             | `0xYOUR_AAVE_STRATEGY_ADDRESS`    |
-| ERC4626 Strategy          | `0xYOUR_ERC4626_STRATEGY_ADDRESS` |
+| Contract                  | Address                          |
+| ------------------------- | ---------------------------------|
+| LiquidityOrchestrate Hook | `                                |           0x8b266637885e1adB318bdA4dF9c0aF2c9543C658`                    |                 |                                                              |
+|                            |                                 |
+|  Create2Deployer Factory                                     |
+|         | ``0x1E2c6B0C18Aaa2c09F2aBEC25a518cB7c296a22d`      |
+|         |                                                    |
+| Aave Strategy             |                                  |
+`0x5EcF68fa8aeEF13E97c62372E8ec4a6d0F2EbeD8`                   |
 
 ### Network
 

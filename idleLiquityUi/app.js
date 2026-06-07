@@ -34,28 +34,65 @@ function updateStreamToggleLabel() {
 /* -------------------------
    WALLET CONNECT (REAL)
 --------------------------*/
+function setWalletButtonLabel(address) {
+  const walletBtn = document.getElementById("walletBtn");
+  if (!walletBtn) return;
+
+  if (address) {
+    walletBtn.innerText = address.slice(0, 6) + "..." + address.slice(-4);
+    return;
+  }
+
+  walletBtn.innerText = "Connect Wallet";
+}
+
+function showWalletConnectionError(error) {
+  console.error("Wallet connection failed:", error);
+
+  setWalletButtonLabel(null);
+  addEvent("Wallet connection failed. Please install or enable MetaMask and try again.");
+
+  const message = error?.message || "Could not connect to MetaMask.";
+  alert(message + " Please install or enable the MetaMask extension and try again.");
+}
+
 async function connectWallet() {
   if (location.protocol === "file:") {
-    alert("Open this app from a local web server such as http://127.0.0.1:8000/ instead of file://. Wallet providers require an HTTP origin.");
+    showWalletConnectionError(new Error("Open this app from a local web server such as http://127.0.0.1:8000/ instead of file://. Wallet providers require an HTTP origin."));
     return;
   }
 
   if (!window.ethereum) {
-    alert("MetaMask was not detected in this browser. Please open this app in Chrome or Edge with the MetaMask extension installed and enabled, then try again.");
+    showWalletConnectionError(new Error("MetaMask extension not found."));
     return;
   }
 
-  provider = new ethers.BrowserProvider(window.ethereum);
-  await provider.send("eth_requestAccounts", []);
+  try {
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-  signer = await provider.getSigner();
-  userAddress = await signer.getAddress();
+    if (!Array.isArray(accounts) || accounts.length === 0) {
+      throw new Error("MetaMask did not return any accounts.");
+    }
 
-  document.getElementById("walletBtn").innerText =
-    userAddress.slice(0, 6) + "..." + userAddress.slice(-4);
+    provider = new ethers.BrowserProvider(window.ethereum);
+    signer = await provider.getSigner();
+    userAddress = await signer.getAddress();
 
-  addEvent("Wallet connected: " + userAddress);
-  addEvent("Live feed is ready — press Start live feed when you want protocol updates.");
+    setWalletButtonLabel(userAddress);
+    addEvent("Wallet connected: " + userAddress);
+    addEvent("Live feed is ready — press Start live feed when you want protocol updates.");
+  } catch (error) {
+    showWalletConnectionError(error);
+  }
+}
+
+const walletBtn = document.getElementById("walletBtn");
+if (walletBtn) {
+  walletBtn.addEventListener("click", () => {
+    connectWallet().catch((error) => {
+      showWalletConnectionError(error);
+    });
+  });
 }
 
 /* -------------------------

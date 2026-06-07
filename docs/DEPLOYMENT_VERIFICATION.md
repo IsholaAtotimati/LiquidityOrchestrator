@@ -9,7 +9,6 @@
 - Explorer: https://sepolia.uniscan.xyz
 
 ## Deployed Contracts
-
 ### 1. Create2Deployer Factory
 - **Address**: `0x1E2c6B0C18Aaa2c09F2aBEC25a518cB7c296a22d`
 - **Purpose**: Deterministic deployment contract using CREATE2
@@ -57,8 +56,9 @@ All contracts were deployed using **deterministic CREATE2 deployment** with fixe
 
 ### Current Status
 - ✅ Contracts exist on-chain at specified addresses
-- ✅ All 30 unit tests pass locally
+- ✅ All 31 tests pass locally
 - ✅ Deterministic deployment validated
+- ✅ Frontend smoke test completed against the deployed hook address
 - ⏳ Source code verification pending on Unichain Etherscan/UniScan
 
 ### Verification Instructions
@@ -78,7 +78,7 @@ To manually verify contracts on Unichain Sepolia Etherscan:
 
 ## Testing Report
 
-**All tests passing**: ✅ 30/30 tests
+**All tests passing**: ✅ 31/31 tests
 - Comprehensive unit tests in `test/`
 - Integration tests for deposit/withdraw flows
 - Mock Aave pool for isolated testing
@@ -95,6 +95,11 @@ Frontend has been updated to use deployed contract:
 - **Address**: `0x8b266637885e1adB318bdA4dF9c0aF2c9543C658`
 - **ABI**: Loaded dynamically from artifact
 - **Location**: [idleLiquityUi/contract.js](idleLiquityUi/contract.js)
+
+### Frontend Verification
+- ✅ Local smoke test completed at http://127.0.0.1:8000/
+- ✅ Page loaded successfully with no console or page runtime errors
+- ✅ UI references the deployed hook address from the verified deployment output
 
 ## Transaction Hashes
 
@@ -121,7 +126,7 @@ If UniScan verification encounters issues:
 
 1. ✅ Contracts deployed and functional
 2. ⏳ Manual verification on UniScan (optional but recommended)
-3. ⏳ Frontend testing with deployed addresses
+3. ✅ Frontend testing with deployed addresses completed
 4. ⏳ Mainnet deployment (when ready)
 
 ## Contact & Support

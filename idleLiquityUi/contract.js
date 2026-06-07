@@ -1,4 +1,4 @@
-let contractAddress = "0xd4fdac8f12277a76da35d293acb8495c3ee029e3";
+let contractAddress = "0x8b266637885e1adB318bdA4dF9c0aF2c9543C658";
 let contractPoolId = "0x09680032ab300a9ad3c27cfb475468b1dbf569c0c54d0c3ba8b0fdaf8e12b388";
 
 (async function loadAddresses(){

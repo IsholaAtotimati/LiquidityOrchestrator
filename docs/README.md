@@ -37,17 +37,17 @@ By combining Uniswap v4 Hooks, Chainlink Automation, Aave, ERC4626 vaults, and m
 ### Network
 
 * **Network:** Unichain Sepolia
-* **Chain ID:** `YOUR_CHAIN_ID`
+* **Chain ID:** `1301`
 * **Block Explorer:** `https://your-explorer-url.com`
 
 ### Repository
 
 ```text
 Frontend:
-https://github.com/your-org/liquidityorchestrate-frontend
+https://github.com//IsholaAtotimati/LiquidityOrchestrator/idleLiquidityUi
 
 Smart Contracts:
-https://github.com/your-org/liquidityorchestrate
+https://github.com//IsholaAtotimati/LiquidityOrchestrator
 ```
 
 ---
